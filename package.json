@@ -1,7 +1,7 @@
 {
   "name": "simple-harmonic-oscillator",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Accepts an array of data, and returns the last simple-harmonic-oscillator result for that array",
   "main": "SHO.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/draeder/simple-harmonic-oscillator.git"
   },
-  "author": "",
+  "author": "Daniel Raeder, Brandon Raeder",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/draeder/simple-harmonic-oscillator/issues"
@@ -19,5 +19,13 @@
   "dependencies": {
     "events": "^3.2.0",
     "technicalindicators": "^3.1.0"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "physics",
+    "sho",
+    "simple",
+    "harmoic",
+    "oscillator"
+  ]
 }
