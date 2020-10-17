@@ -1,0 +1,23 @@
+{
+  "name": "simple-harmonic-oscillator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "SHO.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/draeder/simple-harmonic-oscillator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/draeder/simple-harmonic-oscillator/issues"
+  },
+  "homepage": "https://github.com/draeder/simple-harmonic-oscillator#readme",
+  "dependencies": {
+    "events": "^3.2.0",
+    "technicalindicators": "^3.1.0"
+  }
+}
