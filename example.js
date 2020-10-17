@@ -10,15 +10,16 @@ sho.on("result", result => {
 
 //** random example data
 let array = []
-let max = 450
-let min = 440
-setInterval(()=>{
-    array.push(rand())
-    sho.get("result", {period, array}) // send data to get real time SHO
-},300)
+let min = 449
+let max = 455
 
-function rand(){
-    let result = Math.random() * (max - min) + min;
+setInterval(()=>{
+    array.push(rand(min, max)) // simulates stock price fluctuations
+    sho.get("result", {array}) // send data to get real time SHO
+},rand(50, 5000)) // simulates the random nature of market data change intervals
+
+function rand(min, max){
+    let result = Math.random() * (max - min) + min
     return result
 }
 //**
