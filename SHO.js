@@ -16,9 +16,9 @@ let tiA = []
 
 SHO.prototype.get = function (event, data) {    
     let period = data.period || 14
-    let C = data.array.slice(-1)[0] // last
+    let C = data.array.slice(0)[0] // last
     let Cy = data.array.slice(-2)[0] // before last
-    let Cby = data.array.slice(0)[0] // current
+    let Cby = data.array.slice(-1)[0] // current
     let c = (C-Cy)-(Cy-Cby)
 
     cA.push(c)
