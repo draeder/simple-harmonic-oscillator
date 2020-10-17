@@ -10,15 +10,15 @@ EventEmitter.call(this)
 
 util.inherits(SHO, EventEmitter)
 
-let cA =[]
+let cA = []
 let tA = []
-let tiA =[]
+let tiA = []
 
 SHO.prototype.get = function (event, data) {    
     let period = data.period || 14
-    let C = data.array.slice(-period)[0]//values.slice(-14)[0]//prevClose//currentPrice  //Start price? // I wonder if this should be a historic EMA result
-    let Cy = data.array.slice(-1)[0]//values.slice(-1)[0]//prevClose //Price from X ago?
-    let Cby = data.array.slice(-2)[0]//currentPrice //prevClose2d  // Current price?
+    let C = data.array.slice(-1)[0] // last
+    let Cy = data.array.slice(-2)[0] // before last
+    let Cby = data.array.slice(0)[0] // current
     let c = (C-Cy)-(Cy-Cby)
 
     cA.push(c)
