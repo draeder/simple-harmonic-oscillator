@@ -1,6 +1,6 @@
 {
   "name": "simple-harmonic-oscillator",
-  "version": "0.0.100002",
+  "version": "0.0.100011",
   "description": "Accepts an array of data, and returns the last simple-harmonic-oscillator result for that array",
   "main": "SHO.js",
   "scripts": {
