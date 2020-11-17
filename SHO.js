@@ -18,7 +18,7 @@ SHO.prototype.get = function (event, data) {
     let period = data.period || 14
     let C = data.array.slice(-1)[0] // Current
     let Cy = data.array.slice(-period)[0] // before last
-    let Cby =data.array.slice(0)[0] // current
+    let Cby =data.array.slice(0)[0] // before before last
     let c = (C-Cy)-(Cy-Cby)
 
     cA.push(c)
@@ -64,6 +64,9 @@ SHO.prototype.get = function (event, data) {
         }
         
         let result = EMA.calculate(input)
+        if(result.length === period*2){
+            result = result.slice(-1, period)
+        }
         return result
     }
 
