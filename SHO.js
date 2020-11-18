@@ -20,6 +20,9 @@ SHO.prototype.get = function (event, data) {
     let Cby =data.array.slice(0)[0] // current
     let c = (C-Cy)-(Cy-Cby)
 
+    if(cA.length >= period*2){
+        cA = cA.slice(-period)
+    }
     cA.push(c)
 
     let cArray = cA
@@ -31,6 +34,9 @@ SHO.prototype.get = function (event, data) {
     let T = (Math.PI*2)*(Math.sqrt(Math.abs((C-Cy)/cEma)))
 
     if(T = T){
+        if(tA.length >= period*2){
+            tA = tA.slice(-period)
+        }
         tA.push(T)
 
         let TArray = tA 
@@ -44,7 +50,10 @@ SHO.prototype.get = function (event, data) {
         } else if (C<Cy){
             Ti = -1*T
         }
- 
+
+        if(tiA.length >= period*2){
+            tiA = tiA.slice(-period)
+        }
         tiA.push(Ti)
 
 
