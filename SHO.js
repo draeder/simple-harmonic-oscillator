@@ -1,6 +1,5 @@
 let util = require('util'),
 EventEmitter = require('events')
-const EMA = require('technicalindicators').EMA
 
 function SHO () {
 
@@ -18,7 +17,7 @@ SHO.prototype.get = function (event, data) {
     let period = data.period || 14
     let C = data.array.slice(-1)[0] // Current
     let Cy = data.array.slice(-period)[0] // before last
-    let Cby =data.array.slice(0)[0] // before before last
+    let Cby =data.array.slice(0)[0] // current
     let c = (C-Cy)-(Cy-Cby)
 
     cA.push(c)
@@ -33,6 +32,7 @@ SHO.prototype.get = function (event, data) {
 
     if(T = T){
         tA.push(T)
+
         let TArray = tA 
 
         let TP = emaResult(period, TArray)
@@ -46,6 +46,8 @@ SHO.prototype.get = function (event, data) {
         }
  
         tiA.push(Ti)
+
+
         let TiArray = tiA
         
         let VP = emaResult(period, TiArray)
@@ -57,17 +59,18 @@ SHO.prototype.get = function (event, data) {
         }
     }
 
-    function emaResult(period, array){
-        let input = {
-            period: period,
-            values: array
+    function emaResult(period, prices) {
+        var k = 2/(period + 1);
+
+        emaArray = [prices[0]];
+
+        for (var i = 1; i < prices.length; i++) {
+            emaArray.push(prices[i] * k + emaArray[i - 1] * (1 - k));
         }
-        
-        let result = EMA.calculate(input)
-        if(result.length === period*2){
-            result = result.slice(-1, period)
+        if(emaArray.length >= period){
+            emaArray = emaArray.slice(-period)
         }
-        return result
+        return emaArray;
     }
 
 }

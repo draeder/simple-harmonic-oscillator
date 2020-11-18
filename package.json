@@ -1,6 +1,6 @@
 {
   "name": "simple-harmonic-oscillator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Accepts an array of data, and returns the last simple-harmonic-oscillator result for that array",
   "main": "SHO.js",
   "scripts": {
@@ -17,15 +17,12 @@
   },
   "homepage": "https://github.com/draeder/simple-harmonic-oscillator#readme",
   "dependencies": {
-    "events": "^3.2.0",
-    "technicalindicators": "^3.1.0"
+    "events": "^3.2.0"
   },
   "devDependencies": {},
   "keywords": [
     "physics",
     "sho",
-    "simple",
-    "harmoic",
-    "oscillator"
+    "simple harmonic oscillator"
   ]
 }
